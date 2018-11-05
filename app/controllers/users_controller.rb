@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)   # Not the final implementation!
       if @user.save
+        log_in @user
         flash[:success] = "Bienvenue au Private Club"
       redirect_to @user
       else
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password,
-                                   :password_confirmation)
+                                    :password_confirmation)
     end
 
 end
