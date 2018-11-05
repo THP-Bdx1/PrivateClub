@@ -35,5 +35,43 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'td', text: 'Example'
   end
 
+    test "Edit Private Pages with login" do   #liens présents pour page private
+    @user=User.create!(id: 1, first_name:  "Example",
+                                            last_name: "User",
+                                            email: "user@example.com",
+                                            password:              "password",
+                                            password_confirmation: "password" )
+    get login_path
+    post login_path, params: { session: { email:    'user@example.com',
+                                            password: 'password' } }
+    get '/users/1/edit'
+    end
+
+    test "Don't edit Private Pages with login" do   #liens présents pour page private
+    @user=User.create!(id: 1, first_name:  "Example",
+                                            last_name: "User",
+                                            email: "user@example.com",
+                                            password:              "password",
+                                            password_confirmation: "password" )
+    get login_path
+    post login_path, params: { session: { email:    'user@example.com',
+                                            password: 'password' } }
+    get '/users/2/edit'
+    assert_equal "Tu ne peux accéder qu'à ton profil, petit malin ;)", flash[:danger]
+    assert_redirected_to login_path
+    end
+
+    test "Show link to profile if logged_in?" do
+    @user=User.create!(id: 1, first_name:  "Example",
+                                            last_name: "User",
+                                            email: "user@example.com",
+                                            password:              "password",
+                                            password_confirmation: "password" )
+    get login_path
+    post login_path, params: { session: { email:    'user@example.com',
+                                            password: 'password' } }
+    get '/home'
+    assert_select 'a[href=?]', '/users/1/edit', count: 1
+    end
 
 end

@@ -19,6 +19,15 @@
             <td>
                 <%= user.email %>
             </td>
+            <td>
+            <a href="/users/<%= user.id %>" class="btn btn-outline-dark">Voir le profil</a>
+            </td>
+            <% if current_user.id == user.id %>
+            <td>
+    <a href="/users/<%= user.id %>/edit" class="btn btn-warning">Éditer</a>
+            </td>
+            <% end %>
+        </tr>
             <% end %>
     </tbody>
 

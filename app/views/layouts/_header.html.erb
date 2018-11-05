@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse navbar-light bg-light">
+<header class="navbar navbar-dark bg-dark">
     <div class="container">
         <%= link_to "Home", root_path %>
         <nav>
@@ -8,6 +8,9 @@
                     <%= link_to "La page du club !", home_path %>
                 </li>
                 <li class="divider"></li>
+                <li>
+                <a href="/users/<%=current_user.id%>">Ton profil</a>
+                </li>
                 <li>
                 <%= link_to "Log out", logout_path, method: :delete %>
                 </li>

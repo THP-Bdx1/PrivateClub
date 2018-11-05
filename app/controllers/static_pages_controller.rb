@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
     end
 
     def private_home
+    @user= User.find(current_user.id)
     @users=User.all
     end
 end

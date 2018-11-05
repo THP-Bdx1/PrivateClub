@@ -22,7 +22,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                             email: "",
                                             password:              "password",
                                             password_confirmation: "password" } }
-  assert flash.empty?
+  flash[:danger] = "Tu dois être enregistré pour accéder à cette page, petit malin ;)"
   end
 
 end

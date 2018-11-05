@@ -1,3 +1,17 @@
-<%= @user.first_name %>,
-<%= @user.last_name %>,
-<%= @user.email %>
+<h1>Voici ton profil :</h1>
+<br>
+<h2>Ton prénom : 
+    <%= @user.first_name %>
+</h2>
+<br>
+<h2>Ton nom :
+    <%= @user.last_name %>
+</h2>
+<br>
+<h2>Ton email :
+    <%= @user.email %>
+</h2>
+<% if current_user.id == @user.id %>
+<a href="/users/<%= current_user.id %>/edit" class="btn btn-warning">Éditer</a>
+<% end %>
+
