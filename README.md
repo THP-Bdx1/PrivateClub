@@ -1,24 +1,12 @@
-# README
+Chaque utilisateur peut consulter le profil d'un autre utilisateur, mais ne peut l'éditer. Un utilisateur non enregistré, accède seulement aux pages d'inscription et de login.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pour tester : Ne pas oublier :
 
-Things you may want to cover:
+rails db:create
+rails db:migrate
+bundle install
+Et enfin, amuse-toi avec "rails server" et "rails test" ;)
 
-* Ruby version
+Enjoy !
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Projet réalisé par François & William

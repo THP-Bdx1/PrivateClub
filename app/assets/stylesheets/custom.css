@@ -78,3 +78,15 @@ input {
     color: $state-danger-text;
   }
 }
+
+.navbar {
+  min-height: 70px;
+  padding-top: 5px;
+  margin-bottom: 0px;
+  z-index: 100;
+  text-align: center;
+}
+
+.navbar > .container {
+  max-width: 50%;
+}

@@ -1,25 +1,26 @@
 <header class="navbar navbar-dark bg-dark">
     <div class="container">
-        <%= link_to "Home", root_path %>
+<li class="nav-item">
+    <h5><a class="text-white" href="/">Accueil</a> </h5>
+</li>
         <nav>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" class="text-white">
                 <% if logged_in? %>
-                <li>
-                    <%= link_to "La page du club !", home_path %>
+                <li class="nav-item active">
+                    <h5><a class="text-white" href="/home">La page du club</a> </h5>
                 </li>
-                <li class="divider"></li>
-                <li>
-                <a href="/users/<%=current_user.id%>">Ton profil</a>
+                <li class="nav-item">
+                <h5><a class="text-white" href="/users/<%=current_user.id%>">Ton profil</a> </h5>
                 </li>
-                <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
+                <li class="nav-item">
+                    <h5><a class="text-white" href="/logout">Se déconnecter</a> </h5>
                 </li>
                 <% else %>
-                <li>
-                    <%= link_to "Enregistre-toi !", login_path %>
+                <li class="nav-item">
+                    <h5><a class="text-white" href="/login">Enregistre-toi !</a> </h5>
                 </li>
-                <li>
-                    <%= link_to "Inscris-toi !", signup_path %>
+                <li class="nav-item">
+                    <h5><a class="text-white" href="/signup">Inscris-toi !</a> </h5>
                 </li>
                 <% end %>
             </ul>
