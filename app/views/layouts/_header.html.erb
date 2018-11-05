@@ -1,14 +1,11 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse navbar-light bg-light">
     <div class="container">
-        <%= link_to "sample app", root_path, id: "logo" %>
+        <%= link_to "Home", root_path %>
         <nav>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <%= link_to "Home", root_path %>
-                </li>
                 <% if logged_in? %>
                 <li>
-                    <%= link_to "Users", '#' %>
+                    <%= link_to "La page du club !", home_path %>
                 </li>
                 <li class="divider"></li>
                 <li>
@@ -16,7 +13,10 @@
                 </li>
                 <% else %>
                 <li>
-                    <%= link_to "Log in", login_path %>
+                    <%= link_to "Enregistre-toi !", login_path %>
+                </li>
+                <li>
+                    <%= link_to "Inscris-toi !", signup_path %>
                 </li>
                 <% end %>
             </ul>
