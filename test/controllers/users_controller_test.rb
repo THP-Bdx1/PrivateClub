@@ -2,10 +2,6 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
 
-  def setup
-    @user=users(:one)
-    @user2=users(:two)
-
 
   test "should not create user" do #test validité sans prénom
     user=User.new(first_name: "", last_name: "Potter", email: "potter@potter.com", password:"foobar", password_confirmation: "foobar")

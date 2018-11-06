@@ -13,3 +13,7 @@ Et enfin, amuse-toi avec "rails server" et "rails test" ;)
 Enjoy !
 
 Projet réalisé par François & William
+
+[EDIT de 9h00]
+GROS BORDEL après un ajout tardif d'utilisateurs dans le fichier users.yml
+Donc on a tout supprimé le contenu, sinon il n'y a que des erreurs sur le test...
